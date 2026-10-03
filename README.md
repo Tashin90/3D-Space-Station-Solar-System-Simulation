@@ -19,7 +19,7 @@
 
 The project presents an animated 3D space environment containing the **Sun, Earth, Moon, Mars, Saturn, asteroid belt, satellite, and an ISS-style space station**.
 
-It demonstrates fundamental and advanced computer graphics concepts including **3D transformations, hierarchical modeling, orbital animation, perspective projection, lighting, depth testing, camera movement, and real-time interaction**.
+It demonstrates important computer graphics concepts including **3D transformations, hierarchical modeling, orbital animation, perspective projection, lighting, depth testing, camera movement, and real-time interaction**.
 
 ---
 
@@ -49,44 +49,30 @@ It demonstrates fundamental and advanced computer graphics concepts including **
 
 ## 🎥 Project Preview
 
-### Main Solar System View
+### 🌌 Main Solar System View
 
-> Add your project screenshot here.
+<p align="center">
+  <img src="Screenshot/solar-system.png" alt="Main Solar System View" width="850">
+</p>
 
-```markdown
-![Solar System](screenshots/solar-system.png)
-```
+### 🛰️ Earth & Space Station
 
-### Earth & Space Station
+<p align="center">
+  <img src="Screenshot/space-station.png" alt="Earth and Space Station" width="850">
+</p>
 
-```markdown
-![Space Station](screenshots/space-station.png)
-```
+### 🪐 Saturn & Asteroid Belt
 
-### Saturn & Asteroid Belt
-
-```markdown
-![Saturn](screenshots/saturn.png)
-```
-
----
-
-## 🎬 Demo Video
-
-A demonstration video can be added here:
-
-```markdown
-[▶ Watch Project Demo](YOUR_VIDEO_LINK_HERE)
-```
-
-You can use a **YouTube video link** or upload a demonstration video to GitHub and place its link here.
+<p align="center">
+  <img src="Screenshot/saturn.png" alt="Saturn and Asteroid Belt" width="850">
+</p>
 
 ---
 
 ## 🎮 Controls
 
 | Key | Action |
-|-----|--------|
+|:---:|---|
 | `W` | Move Camera Forward |
 | `S` | Move Camera Backward |
 | `A` | Move Camera Left |
@@ -110,32 +96,37 @@ You can use a **YouTube video link** or upload a demonstration video to GitHub a
                          Moon
                           │
                           ▼
-                   ┌─────────────┐
-                   │    Earth    │
-                   └─────────────┘
-                      │       │
-                Satellite   Space Station
-                      │
-                      ▼
-                     SUN
-                  /   |    \
-             Earth   Mars   Saturn
-                       │
-                 Asteroid Belt
+                     ┌─────────┐
+                     │  Earth  │
+                     └─────────┘
+                      /       \
+               Satellite   Space Station
+
+                         Sun
+                    /     |      \
+                 Earth   Mars   Saturn
+                               
+                      Asteroid Belt
 ```
 
-The simulation uses **hierarchical transformations** so that objects can maintain their own rotation while simultaneously orbiting another object.
-
-For example:
+The project uses **hierarchical transformations**, allowing each object to maintain its own rotation while simultaneously orbiting another object.
 
 ```text
 Sun
- └── Earth Orbit
-      ├── Earth Rotation
-      ├── Moon Orbit
-      │    └── Moon Rotation
-      ├── Satellite Orbit
-      └── Space Station Orbit
+ ├── Earth Orbit
+ │    ├── Earth Rotation
+ │    ├── Moon Orbit
+ │    │    └── Moon Rotation
+ │    ├── Satellite Orbit
+ │    └── Space Station Orbit
+ │
+ ├── Mars Orbit
+ │    └── Mars Rotation
+ │
+ └── Saturn Orbit
+      └── Saturn Rotation
+
+Asteroid Belt
 ```
 
 ---
@@ -143,51 +134,53 @@ Sun
 ## 🛠️ Technologies Used
 
 | Technology | Purpose |
-|------------|---------|
-| C++ | Core programming language |
-| OpenGL | 3D graphics rendering |
-| GLUT | Window management and input handling |
-| GLU | Perspective and camera utilities |
-| Code::Blocks | Development environment |
-| MinGW | C++ compiler |
+|---|---|
+| **C++** | Core programming language |
+| **OpenGL** | 3D graphics rendering |
+| **GLUT** | Window management and user input |
+| **GLU** | Perspective projection and camera utilities |
+| **Code::Blocks** | Development environment |
+| **MinGW** | C++ compiler |
 
 ---
 
 ## 🧠 Computer Graphics Concepts
 
-This project demonstrates several important Computer Graphics concepts:
+### 🔹 Translation
 
-### 1. Translation
+`glTranslatef()` is used to position planets, satellites, the space station, and other objects in the 3D environment.
 
-`glTranslatef()` is used to position planets, satellites and other objects in the 3D environment.
+### 🔹 Rotation
 
-### 2. Rotation
+`glRotatef()` controls planetary self-rotation and orbital movement.
 
-`glRotatef()` controls planetary rotation and orbital movement.
+### 🔹 Scaling
 
-### 3. Scaling
+`glScalef()` is used to resize 3D objects and construct components of the satellite and space station.
 
-`glScalef()` is used to create differently sized 3D components.
+### 🔹 Hierarchical Modeling
 
-### 4. Hierarchical Modeling
+`glPushMatrix()` and `glPopMatrix()` isolate transformations and allow objects such as the Moon, satellite, and space station to move relative to Earth.
 
-`glPushMatrix()` and `glPopMatrix()` isolate transformations and allow objects such as the Moon, satellite and space station to move relative to Earth.
+### 🔹 Perspective Projection
 
-### 5. Perspective Projection
+`gluPerspective()` creates the 3D perspective projection used by the simulation.
 
-`gluPerspective()` creates a realistic 3D perspective.
-
-### 6. Camera
+### 🔹 Camera System
 
 `gluLookAt()` provides an interactive camera system with multiple viewpoints.
 
-### 7. Lighting
+### 🔹 Lighting
 
-OpenGL lighting and material properties provide depth and illumination to the 3D objects.
+OpenGL lighting and material properties are used to illuminate the planets and 3D objects.
 
-### 8. Animation
+### 🔹 Depth Testing
 
-`glutTimerFunc()` continuously updates orbital positions and object rotations.
+`GL_DEPTH_TEST` ensures that objects closer to the camera correctly appear in front of objects farther away.
+
+### 🔹 Animation
+
+`glutTimerFunc()` continuously updates orbital positions, planetary rotations, and other animated objects.
 
 ---
 
@@ -197,16 +190,16 @@ OpenGL lighting and material properties provide depth and illumination to the 3D
 3D-Space-Station-Solar-System-Simulation/
 │
 ├── main.cpp
-│
 ├── 3D Space Station & Solar System Simulation.cbp
 ├── README.md
 │
-├── screenshots/
+├── Screenshot/
 │   ├── solar-system.png
 │   ├── space-station.png
 │   └── saturn.png
 │
-└── .gitignore
+├── bin/
+└── obj/
 ```
 
 ---
@@ -215,38 +208,40 @@ OpenGL lighting and material properties provide depth and illumination to the 3D
 
 ### Requirements
 
-Make sure you have:
+Make sure the following are installed and configured:
 
 - C++ Compiler
 - OpenGL
 - GLUT / FreeGLUT
 - Code::Blocks or another compatible C++ IDE
 
-### Using Code::Blocks
-
-1. Clone this repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Tashin90/3D-Space-Station-Solar-System-Simulation.git
 ```
 
-2. Open:
+### 2. Open the Project
+
+Open the following Code::Blocks project file:
 
 ```text
 3D Space Station & Solar System Simulation.cbp
 ```
 
-3. Make sure the required OpenGL/GLUT libraries are configured.
+### 3. Configure Required Libraries
 
-4. Build the project.
+Make sure the required OpenGL and GLUT libraries are correctly configured.
 
-5. Run the application.
+### 4. Build & Run
+
+Build the project in Code::Blocks and run the application.
 
 ---
 
 ## 🔗 Required Libraries
 
-The project uses the following OpenGL libraries:
+The project uses the following libraries:
 
 ```text
 opengl32
@@ -254,19 +249,20 @@ glu32
 glut32 / freeglut
 ```
 
-Typical headers:
+Main headers:
 
 ```cpp
 #include <windows.h>
 #include <GL/glut.h>
 #include <math.h>
+#include <stdlib.h>
 ```
 
 ---
 
 ## 🔄 Animation System
 
-The simulation continuously updates the rotation and orbital angles.
+The simulation uses different orbital speeds for the planets and Earth-based objects.
 
 ```cpp
 earthOrbit += 0.30f;
@@ -278,38 +274,46 @@ satelliteOrbit += 2.8f;
 stationOrbit += 1.0f;
 ```
 
-Different orbital speeds create a more dynamic solar-system visualization.
+The animation is continuously updated using:
+
+```cpp
+glutTimerFunc(20, update, 0);
+```
+
+This creates continuous orbital and rotational motion throughout the simulation.
 
 ---
 
 ## 🎯 Project Objectives
 
-The main objectives of this project are to:
+The main objectives of this project are:
 
-- Understand 3D transformations in OpenGL
+- Understand and implement 3D transformations
 - Implement hierarchical object relationships
 - Create real-time 3D animations
-- Implement orbital and rotational motion
-- Apply lighting and material properties
+- Simulate orbital and rotational motion
+- Apply OpenGL lighting and material properties
+- Implement perspective projection
 - Implement interactive camera movement
+- Understand depth-buffered 3D rendering
 - Develop a complete 3D scenario using OpenGL and GLUT
 
 ---
 
 ## 🔮 Future Improvements
 
-Possible future improvements include:
+Future versions of the project may include:
 
 - 🌎 Detailed planet textures
-- 🌌 Skybox and improved space environment
+- 🌌 3D skybox
 - ☀️ Enhanced Sun effects
 - 🪐 Additional planets
-- 🛰️ More detailed ISS model
+- 🛰️ More detailed space station model
 - 🚀 Animated spacecraft
-- 🌑 Planet shadows
-- 🎥 Cinematic camera animation
-- 🔊 Background audio
-- 🖱️ Mouse-controlled camera
+- 🌑 Dynamic shadows
+- 🎥 Cinematic camera animations
+- 🔊 Space-themed background audio
+- 🖱️ Mouse-controlled camera system
 
 ---
 
@@ -326,12 +330,12 @@ GitHub: [@Tashin90](https://github.com/Tashin90)
 
 ## ⭐ Support
 
-If you like this project, consider giving the repository a **⭐ Star**.
+If you find this project interesting, consider giving the repository a **⭐ Star**.
 
 It helps support the project and future improvements.
 
 ---
 
 <p align="center">
-  Made with ❤️ using C++, OpenGL & GLUT
+  <b>Made with ❤️ using C++, OpenGL & GLUT</b>
 </p>
