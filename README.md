@@ -57,13 +57,13 @@ It demonstrates important computer graphics concepts including **3D transformati
 ### 🛰️ Earth & Space Station
 
 <p align="center">
-  <img src="Screenshot/space-station.png" alt="Earth and Space Station" width="850">
+  <img src="https://raw.githubusercontent.com/Tashin90/3D-Space-Station-Solar-System-Simulation/main/Screenshot/space-station.png" alt="Earth and Space Station" width="850">
 </p>
 
 ### 🪐 Saturn & Asteroid Belt
 
 <p align="center">
-  <img src="Screenshot/saturn.png" alt="Saturn and Asteroid Belt" width="850">
+  <img src="https://raw.githubusercontent.com/Tashin90/3D-Space-Station-Solar-System-Simulation/main/Screenshot/saturn.png" alt="Saturn and Asteroid Belt" width="850">
 </p>
 
 ---
