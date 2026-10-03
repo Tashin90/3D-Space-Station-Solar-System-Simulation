@@ -71,7 +71,7 @@ It demonstrates important computer graphics concepts including **3D transformati
 ## 🎬 Demo Video
 
 <p align="center">
-  <a href="./Video/3D%20Space%20Station%20%26%20Solar%20System%20Simulation%202026-10-03%2016-49-26.mp4">▶️ Watch Project Demo Video</a>
+  <a href="https://raw.githubusercontent.com/Tashin90/3D-Space-Station-Solar-System-Simulation/main/Video/3D%20Space%20Station%20%26%20Solar%20System%20Simulation%202026-10-03%2016-49-26.mp4">▶️ Watch Project Demo Video</a>
 </p>
 
 ---
