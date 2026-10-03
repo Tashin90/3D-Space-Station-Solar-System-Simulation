@@ -12,7 +12,6 @@
 </p>
 
 ---
-
 ## 🚀 About the Project
 
 **3D Space Station & Solar System Simulation** is an interactive computer graphics project developed using **C++, OpenGL, and GLUT**.
@@ -52,7 +51,7 @@ It demonstrates important computer graphics concepts including **3D transformati
 ### 🌌 Main Solar System View
 
 <p align="center">
-  <img src="Screenshot/solar-system.png" alt="Main Solar System View" width="850">
+  <img src="https://raw.githubusercontent.com/Tashin90/3D-Space-Station-Solar-System-Simulation/main/Screenshot/solar-system.png" alt="Main Solar System View" width="850">
 </p>
 
 ### 🛰️ Earth & Space Station
